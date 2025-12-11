@@ -1,0 +1,62 @@
+@page
+@model crmapp.Pages.Customers.Create
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-4">
+        <h2 class="text-center mb-5"> New Customer</h2>
+
+        @if (Model.ErrorMessage.Length > 0) {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>@Model.ErrorMessage</strong>
+                <button type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+        }
+
+        <form method="post">
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">First Name</label>
+                <div class="col-sm-4">
+                    <input class="form-control" asp-for="Firstname" /><!--  asp-for propery of the model -->
+                    <span asp-validation-for="Firstname" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Last Name</label>
+                <div class="col-sm-4">
+                    <input class="form-control" asp-for="Lastname" /><!--  asp-for propery of the model -->
+                    <span asp-validation-for="Lastname" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Email</label>
+                <div class="col-sm-4">
+                    <input class="form-control" asp-for="Email" /><!--  asp-for propery of the model -->
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">Phone</label>
+                <div class="col-sm-4">
+                    <input class="form-control" asp-for="Phone" /><!--  asp-for propery of the model -->
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="bt-btn-primary"> Submit </button>
+                </div>
+
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-primary" href="/Customers/index" role="button"> Cancel </a>
+                </div>
+            </form>
+
+    </div>
+</div>
